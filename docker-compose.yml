@@ -3,7 +3,7 @@ services:
   vprodb:
     image: otunsdiary/db
     build:
-      context: ./javaapi
+      context: ./Docker-files/db
     ports:
       - "3306:3306"
     volumes:
@@ -26,6 +26,8 @@ services:
 
   vproapp:
     image: otunsdiary/app
+    build:
+      context: ./Docker-files/app
     ports:
       - "8080:8080"
     volumes: 
@@ -33,6 +35,8 @@ services:
 
   vproweb:
     image: otunsdiary/web
+    build:
+      context: ./Docker-files/web
     ports:
       - "80:80"
 volumes:
