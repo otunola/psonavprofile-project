@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   vprodb:
-    image: otunsdiary/db
+    image: db
     build:
       context: ./Docker-files/db
     ports:
@@ -25,7 +25,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=guest
 
   vproapp:
-    image: otunsdiary/app
+    image: app
     build:
       context: ./Docker-files/app
     ports:
@@ -34,7 +34,7 @@ services:
       - vproappdata:/usr/local/tomcat/webapps
 
   vproweb:
-    image: otunsdiary/web
+    image: web
     build:
       context: ./Docker-files/web
     ports:
